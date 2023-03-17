@@ -1,4 +1,5 @@
 # CS477-2023-03-Workshop02
+# Workshop 02
 Please find below an Express application that connects to a local MongoDB instance, each document has the following structure for `schools` collection:
 ```JavaScript
 {
@@ -79,7 +80,7 @@ With the body
     title: "CS477"
 }
 ```
-8. Add a new student to a specific course *(level 2)*
+8. Add a new student to an existing course *(level 2)*
 ```
 PUT http://localhost:3000/schools/{code}/courses/{id}/students 
 With the body
@@ -98,11 +99,11 @@ With the body
 ```
 10. Delete a student *(level 2)*
 ```
-Delete http://localhost:3000/schools/{code}/courses/{id}/students/{id} 
+DELETE http://localhost:3000/schools/{code}/courses/{id}/students/{id} 
 ```
 * New
 11. Create a middleware to ensure the school code is unique when inserting a new school
-12. Create a middleware to ensure the data containing _id as an ObjectId when inserting a course, teacher, or student
+12. Create a middleware to ensure the data containing _id as an ObjectId when inserting a course, a teacher, or a student
 13. Get all schools
 ```
 GET http://localhost:3000/schools
@@ -115,7 +116,9 @@ GET http://localhost:3000/schools/{code}/teachers
 ```
 GET http://localhost:3000/schools/{code}/courses
 ```
-16. Get all students from a school and sort them if needed
+16. Get all students from a course and sort them if needed
 ```
 GET http://localhost:3000/schools/{code}/courses/{id}/students?sort=true
+```
+
 ```
